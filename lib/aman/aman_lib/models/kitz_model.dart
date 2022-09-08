@@ -1,25 +1,23 @@
 class KitzModel {
   static final items4 = [
     Item4(
-      name: "Amazon Prime Student",
+      name: "GitPod",
       des:
-          "Amazon Prime includes many benefits, but the price tag might be steep for some college students. However, the Amazon Prime Student plan costs only half as much, which makes using Amazon Prime much more affordable.\n\nWho Is Eligible for Amazon Prime Student?\n\nIf you want to use Amazon Prime Student, you must be enrolled in a college or school for higher education and have an .edu email address or other documentation to prove your enrollment.\n\nAmazon’s Prime Student is available as a free 6-month trial, after which you can opt to get the service for\n\n"
+          "Gitpod is an open-source Kubernetes application for ready-to-code developer environments that spins up fresh, automated dev environments for each task, in the cloud, in seconds. It enables you to describe your dev environment as code and start instant, remote and cloud-based developer environments directly from your browser or your Desktop IDE.\n\nTightly integrated with GitLab, GitHub, and Bitbucket, Gitpod automatically and continuously prebuilds dev environments for all your branches. As a result, team members can instantly start coding with fresh, ephemeral, and fully-compiled dev environments - no matter if you are building a new feature, want to fix a bug, or do a code review\n\nFeatures\n\n"
           "*"
-          " \$69 a year, the equivalent of \$5.75 per month.\n\n"
+          " Dev environments as code - Gitpod applies lessons learned from infrastructure-as-code. Spinning up dev environments is easily repeatable and reproducible empowering you to automate, version-control, and share dev environments across your team.\n\n"
           "*"
-          " If you pay by the month, the charge is \$7.49.\n\nAmazon Student Exclusive Offers\n\nAn Amazon Student account includes exclusive services and offers that change periodically; currently, they are:\n\n"
+          " Prebuilt dev environments - Gitpod continuously prebuilds all your git branches similar to a CI server. Control how Gitpod pre-configures and initializes environments before you even start a workspace through init commands in your .gitpod.yml.\n\n"
           "*"
-          " Six months of free LinkedIn Premium to help soon-to-be graduates find jobs and help undergrads find internship\n\n"
-          "*"
-          " Showtime movies and shows for only \$0.99 per month for up to a year\n\n"
-          "*"
-          " Kindle Unlimited free 2-month trial with over a million titles\n\n"
-          "*"
-          " Free Grub Hub food delivery in some areas\n\n"
-          "*"
-          " Special deals for students on college-specific items",
+          " Integrated Docker build - Gitpod instantly starts a container in the cloud based on your Docker image. Tools that are required for your project are easy to install and configure..",
       image:
-          "https://images-eu.ssl-images-amazon.com/images/G/31/social_share/amazon_logo._CB633266945_.png",
+          "https://dka575ofm4ao0.cloudfront.net/pages-transactional_logos/retina/237658/02205996e1e84567d4fe3458ef0c01ce895afcf6.png",
+    ),
+    Item4(
+      name: "GitHub",
+      des:
+          "GitHub is a web-based version-control and collaboration platform for software developers. Microsoft, the biggest single contributor to GitHub, initiated an acquisition of GitHub for \$7.5 billion in June, 2018. GitHub, which is delivered through a software-as-a-service (SaaS) business model, was started in 2008 and was founded on Git, an open source code management system created by Linus Torvalds to make software builds faster.\n\n Git is used to store the source code for a project and track the complete history of all changes to that code. It allows developers to collaborate on a project more effectively by providing tools for managing possibly conflicting changes from multiple developers. GitHub allows developers to change, adapt and improve software from its public repositories for free, but it charges for private repositories, offering various paid plans. Each public or private repository contains all of a project's files, as well as each file's revision history. Repositories can have multiple collaborators and can be either public or private.\n\nGitHub facilitates social coding by providing a web interface to the Git code repository and management tools for collaboration. GitHub can be thought of as a serious social networking site for software developers. Members can follow each other, rate each other's work, receive updates for specific projects and communicate publicly or privately. ",
+      image: "https://foundations.projectpythia.org/_images/GitHub-logo.png",
     ),
   ];
 }

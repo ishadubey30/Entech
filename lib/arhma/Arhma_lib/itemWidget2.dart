@@ -23,10 +23,11 @@ class _ItemWidgetState extends State<ItemWidget> {
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Card(
-          color: Colors.transparent,
+          elevation: 1,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
-          ),
+              borderRadius: BorderRadius.circular(25.0),
+              side: BorderSide(color: Colors.black, width: 2)),
+          color: Colors.transparent,
           clipBehavior: Clip.antiAlias,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -84,11 +85,15 @@ class _ItemWidgetState extends State<ItemWidget> {
                           MaterialPageRoute(
                               builder: (context) => Gate(userId!)));
                     } else if (widget.item.name == "NEET PG") {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => neetpg()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => NeetPG(userId!)));
                     } else {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => formapp2()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => FormGrad(userId!)));
                     }
                   },
                   child: Text("Pay ${widget.item.price}"),

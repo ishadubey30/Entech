@@ -24,10 +24,11 @@ class _ItemWidgetState extends State<ItemWidget> {
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Card(
-          color: Colors.transparent,
+          elevation: 1,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
-          ),
+              borderRadius: BorderRadius.circular(25.0),
+              side: BorderSide(color: Colors.black, width: 2)),
+          color: Colors.transparent,
           clipBehavior: Clip.antiAlias,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -80,16 +81,20 @@ class _ItemWidgetState extends State<ItemWidget> {
                 OutlinedButton(
                   onPressed: () {
                     if (widget.item.name == "JEE MAIN") {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => jmain()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => JeeMain(userId!)));
                     } else if (widget.item.name == "JEE ADVANCED") {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => jAdv(userId!)));
                     } else if (widget.item.name == "NEET") {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => neet()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Neet(userId!)));
                     } else {
                       Navigator.push(
                           context,

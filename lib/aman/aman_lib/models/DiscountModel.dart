@@ -5,7 +5,7 @@ class DiscountModel {
       des:
           "Amazon Prime includes many benefits, but the price tag might be steep for some college students. However, the Amazon Prime Student plan costs only half as much, which makes using Amazon Prime much more affordable.\n\nWho Is Eligible for Amazon Prime Student?\n\nIf you want to use Amazon Prime Student, you must be enrolled in a college or school for higher education and have an .edu email address or other documentation to prove your enrollment.\n\nAmazon’s Prime Student is available as a free 6-month trial, after which you can opt to get the service for\n\n"
           "*"
-          " \$69 a year, the equivalent of \$5.75 per month.\n\n"
+          " ₹5600 a year, the equivalent of \$5.75 per month.\n\n"
           "*"
           " If you pay by the month, the charge is \$7.49.\n\nAmazon Student Exclusive Offers\n\nAn Amazon Student account includes exclusive services and offers that change periodically; currently, they are:\n\n"
           "*"
@@ -20,7 +20,7 @@ class DiscountModel {
           " Special deals for students on college-specific items",
       image:
           "https://images-eu.ssl-images-amazon.com/images/G/31/social_share/amazon_logo._CB633266945_.png",
-      price: "\$69",
+      price: "5600",
     ),
     Item(
       name: "Adobe Creative Cloud",
@@ -34,7 +34,7 @@ class DiscountModel {
           " Home-schooling ",
       image:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Adobe_Creative_Cloud_rainbow_icon.svg/1200px-Adobe_Creative_Cloud_rainbow_icon.svg.png",
-      price: "₹1, 596.54",
+      price: "1596",
     ),
     Item(
       name: "Spotify",
@@ -43,7 +43,7 @@ class DiscountModel {
           "through a third-party service known as SheerID. You must be 18 and attend an accredited college or university to be eligible.\n\nStudents can subscribe to Spotify Premium Student for a maximum of four years, after which they will need to pay the full price of \$9.99.\n\nWith the student discount, that price drops to \$4.99.",
       image:
           "https://digital.hbs.edu/platform-digit/wp-content/uploads/sites/2/2020/04/spotify-logo-1920x1080-2.jpg",
-      price: "\$4.99",
+      price: "230",
     ),
     Item(
         name: "Skilshare",
@@ -51,7 +51,7 @@ class DiscountModel {
             "Skillshare is a platform that showcases courses in the fields of animation, design, illustration, lifestyle, photo/film, business, and writing. They have such a wide variety of courses and classes; you can find almost anything to learn here!\n\nSkillshare believes creativity should be part of all education. They also recognize the financial limitations of student life and offer a generous 50% discount for this reason.\n\nOnce approved, you’ll have unlimited access to all of their courses and offline videos, and at a greatly discounted price!",
         image:
             "https://static.skillshare.com/assets/images/opengraph-default.png",
-        price: "\$180"),
+        price: "340"),
     Item(
         name: "Lenovo",
         des:
@@ -62,21 +62,21 @@ class DiscountModel {
             " Currently enrolled at a college, university, community college, or technical college.",
         image:
             "https://logodownload.org/wp-content/uploads/2014/09/lenovo-logo-1-1.png",
-        price: "\$64"),
+        price: "640"),
     Item(
         name: "Microsoft",
         des:
             "If you’re currently in education, It's handy to know how to get a Microsoft student discount, to save money on a range of excellent hardware and software.\n\nThe Microsoft Store runs a series of student-exclusive discounts that rotate throughout the year, so it’s worth checking the offers regularly. Expect to see savings on desktop computers, laptops, tablets and accessories. That’s not all because Microsoft also offers some of its most popular software, including Office 365, for free to students, making this one of the most generous student discounts available.\n\n Whether you want to save big on a laptop or a tablet or just fancy getting access to some essential software for free",
         image:
             "https://www.gartner.com/imagesrv/peer-insights/vendors/logos/microsoft.jpg",
-        price: "\$48"),
+        price: "480"),
     Item(
         name: "Apple",
         des:
             "Are you looking for some more info on the Apple Student discount? Well, you've come to the right place. We have gathered up all you need to know about the Apple Student savings from who's eligible to what products are available with the discount. You can save on the newest Apple products such as the latest iMac and the iPad Pro. Plus, if you buy any of the Apple products, then Apple will give you a gift card worth up to \$150/£120 as part of its student discount.\n\nThere is no set amount on how much you'll save with the Apple Student discount, however, you can expect to save approximately 10 per cent off the full price Apple products. We know, that doesn't sound like loads of cash, but we assure you that all the savings add up. ",
         image:
             "https://www.theglades.co.uk/wp-content/uploads/2020/02/media.idownloadblog.com-23104664601427570.png",
-        price: "\$45"),
+        price: "82000"),
   ];
 }
 

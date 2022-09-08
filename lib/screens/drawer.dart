@@ -4,12 +4,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sih_finals/afsha/afsha_lib/home.dart';
 import 'package:sih_finals/aman/aman_lib/screens/services_screen.dart';
-import 'package:sih_finals/ananya/Ananya-main/drawer.dart';
+import 'package:sih_finals/ananya/lib/home.dart';
+
 import 'package:sih_finals/arhma/Arhma_lib/chatbot.dart';
 import 'package:sih_finals/arhma/Arhma_lib/exam_screen.dart';
 import 'package:sih_finals/arhma/Arhma_lib/home_screen.dart';
-import 'package:sih_finals/arnav/Arnav-main/home.dart';
+import 'package:sih_finals/arnav/Arnav-main%20(2)/Arnav-main/home.dart';
+
+import 'package:sih_finals/screens/homepage.dart';
+
 import 'package:sih_finals/screens/payment.dart';
+import 'package:sih_finals/screens/security_screen.dart';
 import 'package:sih_finals/screens/sign_in.dart';
 import 'package:sih_finals/screens/view_profile.dart';
 import 'package:sih_finals/services/googleSign.dart';
@@ -25,7 +30,7 @@ class _MyDrawerState extends State<MyDrawer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black12,
+      color: Color.fromARGB(255, 240, 224, 198),
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
@@ -43,32 +48,55 @@ class _MyDrawerState extends State<MyDrawer> {
               children: [
                 ListTile(
                   title: const Text('Home'),
-                  leading: Icon(CupertinoIcons.home),
+                  leading: Icon(CupertinoIcons.home, color: Colors.black),
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
                   },
                 ),
-                ListTile(
-                  title: const Text('Counselling'),
-                  leading: Icon(CupertinoIcons.person_3),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => MyDrawer_Ananya()));
-                  },
-                ),
+                // ListTile(
+                //   title: const Text('Counselling'),
+                //   leading: Icon(CupertinoIcons.person_3, color: Colors.black),
+                //   onTap: () {
+                //     Navigator.push(
+                //         context,
+                //         MaterialPageRoute(
+                //             builder: (context) => MyDrawer_Ananya()));
+                //   },
+                // ),
                 ListTile(
                   title: const Text('Exam Forms'),
-                  leading: Icon(CupertinoIcons.doc_chart),
+                  leading: Icon(CupertinoIcons.doc_chart, color: Colors.black),
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomePage_Ar()));
                   },
                 ),
                 ListTile(
+                  title: const Text('Counselling'),
+                  leading: Icon(CupertinoIcons.person_3, color: Colors.black),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HomePage_Ananya()));
+                  },
+                ),
+                ListTile(
+                  title: const Text('Security Tips'),
+                  leading:
+                      Icon(CupertinoIcons.shield_slash, color: Colors.black),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                security_screen())); //security tips
+                  },
+                ),
+                ListTile(
                   title: const Text('Services'),
-                  leading: Icon(CupertinoIcons.plus_app),
+                  leading: Icon(CupertinoIcons.plus_app, color: Colors.black),
                   onTap: () {
                     Navigator.push(
                         context,
@@ -78,17 +106,19 @@ class _MyDrawerState extends State<MyDrawer> {
                 ),
                 ListTile(
                   title: const Text('Video Trainings'),
-                  leading: Icon(CupertinoIcons.play_rectangle),
+                  leading:
+                      Icon(CupertinoIcons.play_rectangle, color: Colors.black),
                   onTap: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => MainPage_Arnav()));
+                            builder: (context) => HomePage_Arnav()));
                   },
                 ),
                 ListTile(
                   title: const Text('Sponsored Content'),
-                  leading: Icon(CupertinoIcons.book_circle),
+                  leading:
+                      Icon(CupertinoIcons.book_circle, color: Colors.black),
                   onTap: () {
                     Navigator.push(
                         context,
@@ -97,16 +127,7 @@ class _MyDrawerState extends State<MyDrawer> {
                                 AfshaHomePage())); //afsha Home page
                   },
                 ),
-                ListTile(
-                  title: const Text('View Profile'),
-                  leading: Icon(CupertinoIcons.profile_circled),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => GetUserName(user!.uid)));
-                  },
-                ),
+
                 ListTile(
                   onTap: () {
                     // Navigator.of(context)
@@ -114,16 +135,18 @@ class _MyDrawerState extends State<MyDrawer> {
                     Navigator.of(context).push(new MaterialPageRoute(
                         builder: (BuildContext context) => help()));
                   },
-                  leading: const Icon(
-                    CupertinoIcons.question_circle,
-                  ),
+                  leading: const Icon(CupertinoIcons.question_circle,
+                      color: Colors.black),
                   title: const Text(
                     'Help ',
                   ),
                 ),
                 ListTile(
                   title: const Text('Logout'),
-                  leading: Icon(Icons.logout_rounded),
+                  leading: Icon(
+                    Icons.logout_rounded,
+                    color: Colors.black,
+                  ),
                   onTap: () async {
                     FirebaseAuth.instance.signOut().then(
                       (value) {

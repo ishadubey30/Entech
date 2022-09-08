@@ -5,7 +5,7 @@ class ComModel {
       des:
           "When you become a student, everyone tells you that you'll have to work harder. But actually, it's more about working smarter. Which means you'll need productivity software to plan your activities and schedule, which includes features like a calendar, email, document editing, spreadsheets and more.\n\nMicrosoft Office 365 is a serious software package that's widely used across the business world, and as a student you can get a version of it, called Office 365 Education, for free. This includes Microsoft Word for documents, Microsoft Excel for spreadsheets, Microsoft PowerPoint for presentations, Microsoft OneNote for notetaking, and Microsoft Outlook for email.\n\nFeaturing Microsoft's most popular productivity apps, you can sign online, from any device, to organise your activities wherever you are. And best of all, you get a whopping 1TB of online storage.",
       image:
-          "https://e7.pngegg.com/pngimages/1012/492/png-clipart-logo-office-365-microsoft-office-2010-microsoft-corporation-logo-microsoft-office-text-trademark.png",
+          "https://amanpic.s3.ap-south-1.amazonaws.com/aman/Microsoft_Office_logo_(2019%E2%80%93present).svg.png",
     ),
     Item3(
       name: "Google Drive",
@@ -26,7 +26,7 @@ class ComModel {
       des:
           "Adobe Acrobat is a family of application software that allows the viewing, printing and management of portable document files (PDF). It is distributed as commercial software under proprietary license by Adobe Inc.\n\nEver since its first release, Acrobat has become a foundation for workflow in the publication industry. Adobe Acrobat is used in a variety of fields including educational, administrative services, business and IT documentation. It is extensively used in producing applications, registration forms, survey forms, user guides and manual, and lessons.\n\nAn interesting feature of Adobe PDF documents is that they maintain all the fonts, graphics, images color and formatting of any source document, irrespective of the platform or the application used in creating it. The user may view, share, print, navigate and save PDF documents using the Adobe Reader, which is distributed as freeware.",
       image:
-          "https://1000logos.net/wp-content/uploads/2020/08/Adobe-Acrobat-Logo.png",
+          "https://amanpic.s3.ap-south-1.amazonaws.com/aman/kisspng-logo-adobe-inc-adobe-photoshop-adobe-illustrator-partners-marketing-technology-testing-hosting-5c906e91c0fc52.4602114315529693617905.png",
     ),
     Item3(
       name: "VLC Media Player",
@@ -35,7 +35,7 @@ class ComModel {
           "secret"
           " features under the hood that we're going to explore in this article.\n\n1. Use VLC as a Video Downloader for YouTube\n\n2. Convert Videos to Any Format\n\n3. VLC as a Graphic Equalizer for Your Music\n\n4. Play Internet Radio and Podcasts in VLC\n\n5. Loop a Section of a Video or Audio File\n\n6. Add Features With VLC Add-Ons and VLC Extensions",
       image:
-          "https://www.clipartmax.com/png/middle/21-213081_this-image-rendered-as-png-in-other-widths-vlc-media-player-png.png",
+          "https://amanpic.s3.ap-south-1.amazonaws.com/aman/ezgif.com-gif-maker.png",
     ),
   ];
 }

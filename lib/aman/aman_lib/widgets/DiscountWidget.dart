@@ -1,11 +1,21 @@
 import 'package:expandable/expandable.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:mailer/mailer.dart';
+import 'package:mailer/smtp_server.dart';
 import 'package:sih_finals/aman/aman_lib/models/DiscountModel.dart';
+import 'package:sih_finals/flobalVariables.dart';
 import 'package:sih_finals/screens/payment.dart';
 
-class DiscountWidget extends StatelessWidget {
+class DiscountWidget extends StatefulWidget {
   final Item item;
   const DiscountWidget({required this.item});
+
+  @override
+  State<DiscountWidget> createState() => _DiscountWidgetState();
+}
+
+class _DiscountWidgetState extends State<DiscountWidget> {
   @override
   Widget build(BuildContext context) {
     return ExpandableNotifier(
@@ -25,7 +35,8 @@ class DiscountWidget extends StatelessWidget {
                   height: 240,
                   width: double.maxFinite,
                   decoration: BoxDecoration(
-                    image: DecorationImage(image: NetworkImage(item.image)),
+                    image:
+                        DecorationImage(image: NetworkImage(widget.item.image)),
                   ),
                 ),
                 ScrollOnExpand(
@@ -38,7 +49,7 @@ class DiscountWidget extends StatelessWidget {
                     header: Padding(
                       padding: EdgeInsets.all(12),
                       child: Text(
-                        item.name,
+                        widget.item.name,
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -46,7 +57,7 @@ class DiscountWidget extends StatelessWidget {
                       ),
                     ),
                     collapsed: Text(
-                      item.des,
+                      widget.item.des,
                       style: TextStyle(
                         fontSize: 18,
                       ),
@@ -55,7 +66,7 @@ class DiscountWidget extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                     expanded: Text(
-                      List.generate(1, (_) => item.des).join('\n\n'),
+                      List.generate(1, (_) => widget.item.des).join('\n\n'),
                       style: TextStyle(fontSize: 18),
                     ),
                     builder: (_, collapsed, expanded) => Padding(
@@ -68,8 +79,11 @@ class DiscountWidget extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Payment()));
+                    setState(() {
+                      price = int.parse(widget.item.price);
+                    });
                   },
-                  child: Text("Pay ${item.price}"),
+                  child: Text("Pay ₹ ${widget.item.price}"),
                   style: OutlinedButton.styleFrom(
                     backgroundColor: Colors.transparent,
                     primary: Colors.black,

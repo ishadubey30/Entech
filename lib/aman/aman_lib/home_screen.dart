@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sih_finals/screens/homepage.dart';
 import './drawer.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,6 +10,18 @@ class HomeScreen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       drawer: MyDrawer(),
       appBar: AppBar(
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              CupertinoIcons.home,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => HomePage()));
+            },
+          )
+        ],
         shadowColor: Colors.transparent,
         foregroundColor: Colors.black87,
         backgroundColor: Colors.transparent,

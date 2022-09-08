@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sih_finals/screens/homepage.dart';
 import 'Engineering.dart';
 import 'upsc.dart';
 import 'Banking.dart';
@@ -16,6 +18,18 @@ class AfshaHomePage extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                CupertinoIcons.home,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomePage()));
+              },
+            )
+          ],
           elevation: 0.0,
           title: Text(
             '',

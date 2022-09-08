@@ -27,11 +27,12 @@ class exam_screen extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 194, 233, 251),
-              Color.fromARGB(255, 170, 201, 251),
+              Color.fromARGB(255, 152, 231, 245),
+              Color.fromARGB(255, 241, 239, 235),
+              Color.fromARGB(255, 246, 215, 169),
             ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomCenter,
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
           ),
         ),
         child: Padding(
@@ -43,11 +44,12 @@ class exam_screen extends StatelessWidget {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => after12th()));
                 },
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.black.withOpacity(0.25),
-                  ),
+                child: Card(
+                  elevation: 1,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      side: BorderSide(color: Colors.black, width: 2)),
+                  color: Colors.transparent,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -73,15 +75,14 @@ class exam_screen extends StatelessWidget {
               InkWell(
                 onTap: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => govt()));
+                      context, MaterialPageRoute(builder: (context) => govt()));
                 },
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.black.withOpacity(0.25),
-                  ),
+                child: Card(
+                  elevation: 1,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      side: BorderSide(color: Colors.black, width: 2)),
+                  color: Colors.transparent,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -106,11 +107,12 @@ class exam_screen extends StatelessWidget {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => afterpg1()));
                 },
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.black.withOpacity(0.25),
-                  ),
+                child: Card(
+                  elevation: 1,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      side: BorderSide(color: Colors.black, width: 2)),
+                  color: Colors.transparent,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

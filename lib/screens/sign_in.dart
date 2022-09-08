@@ -19,6 +19,7 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  bool _obscureText = true;
   TextEditingController _passController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -81,7 +82,18 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
                 TextFormField(
                   controller: _passController,
+                  obscureText: _obscureText,
                   decoration: InputDecoration(
+                    suffixIcon: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _obscureText = !_obscureText;
+                        });
+                      },
+                      child: Icon(_obscureText
+                          ? Icons.visibility
+                          : Icons.visibility_off),
+                    ),
                     prefixIcon: Icon(CupertinoIcons.lock_fill),
                     prefixIconColor: Colors.black,
                     labelText: "Enter Password",

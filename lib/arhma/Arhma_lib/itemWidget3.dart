@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:sih_finals/arhma/Arhma_lib/formSsc.dart';
 import 'package:sih_finals/arhma/Arhma_lib/formUpsc.dart';
 import 'package:sih_finals/arhma/Arhma_lib/formgrad.dart';
@@ -5,19 +6,28 @@ import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'catalog3.dart';
 
-class ItemWidget extends StatelessWidget {
+class ItemWidget extends StatefulWidget {
   final Item item;
   const ItemWidget({required this.item});
+
+  @override
+  State<ItemWidget> createState() => _ItemWidgetState();
+}
+
+class _ItemWidgetState extends State<ItemWidget> {
+  final user = FirebaseAuth.instance.currentUser;
+  late String? userId = user!.uid;
   @override
   Widget build(BuildContext context) {
     return ExpandableNotifier(
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Card(
-          color: Colors.transparent,
+          elevation: 1,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
-          ),
+              borderRadius: BorderRadius.circular(25.0),
+              side: BorderSide(color: Colors.black, width: 2)),
+          color: Colors.transparent,
           clipBehavior: Clip.antiAlias,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -27,7 +37,8 @@ class ItemWidget extends StatelessWidget {
                   height: 240,
                   width: double.maxFinite,
                   decoration: BoxDecoration(
-                    image: DecorationImage(image: NetworkImage(item.image)),
+                    image:
+                        DecorationImage(image: NetworkImage(widget.item.image)),
                   ),
                 ),
                 ScrollOnExpand(
@@ -40,7 +51,7 @@ class ItemWidget extends StatelessWidget {
                     header: Padding(
                       padding: EdgeInsets.all(12),
                       child: Text(
-                        item.name,
+                        widget.item.name,
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -48,7 +59,7 @@ class ItemWidget extends StatelessWidget {
                       ),
                     ),
                     collapsed: Text(
-                      item.des,
+                      widget.item.des,
                       style: TextStyle(
                         fontSize: 18,
                       ),
@@ -57,7 +68,7 @@ class ItemWidget extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                     expanded: Text(
-                      List.generate(1, (_) => item.des).join('\n\n'),
+                      List.generate(1, (_) => widget.item.des).join('\n\n'),
                       style: TextStyle(fontSize: 18),
                     ),
                     builder: (_, collapsed, expanded) => Padding(
@@ -68,18 +79,24 @@ class ItemWidget extends StatelessWidget {
                 ),
                 OutlinedButton(
                   onPressed: () {
-                    if (item.name == "UPSC CIVIL SERVICES") {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => upsc()));
-                    } else if (item.name == "SSC CGL") {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => ssc()));
+                    if (widget.item.name == "UPSC CIVIL SERVICES") {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => UPSC(userId!)));
+                    } else if (widget.item.name == "SSC CGL") {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => sscCGL(userId!)));
                     } else {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => formapp2()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => FormGrad(userId!)));
                     }
                   },
-                  child: Text("Pay ${item.price}"),
+                  child: Text("Pay ${widget.item.price}"),
                   style: OutlinedButton.styleFrom(
                     backgroundColor: Colors.transparent,
                     primary: Colors.black,

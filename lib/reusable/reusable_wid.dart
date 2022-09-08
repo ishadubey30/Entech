@@ -68,9 +68,9 @@ Container firebaseButton(BuildContext context, String title, Function onTap) {
         backgroundColor: MaterialStateProperty.resolveWith(
           (states) {
             if (states.contains(MaterialState.pressed)) {
-              return Colors.black54;
+              return Colors.white;
             }
-            return Colors.white12;
+            return Color.fromARGB(255, 102, 184, 9);
           },
         ),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(

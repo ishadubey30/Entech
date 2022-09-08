@@ -19,8 +19,9 @@ class after12th extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 194, 233, 251),
-              Color.fromARGB(255, 170, 201, 251),
+              Color.fromARGB(255, 152, 231, 245),
+              Color.fromARGB(255, 241, 239, 235),
+              Color.fromARGB(255, 246, 215, 169),
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,

@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:sih_finals/arhma/Arhma_lib/formgrad.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sih_finals/screens/homepage.dart';
 import './drawer.dart';
 //import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -144,6 +146,18 @@ class _HomePage_ArState extends State<HomePage_Ar> {
         extendBodyBehindAppBar: true,
         drawer: MyDrawer(),
         appBar: AppBar(
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                CupertinoIcons.home,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomePage()));
+              },
+            )
+          ],
           title: Text(
             '',
             style: TextStyle(color: Colors.black87),
@@ -234,7 +248,7 @@ class _HomePage_ArState extends State<HomePage_Ar> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => jmain()));
+                                    builder: (context) => JeeMain(userId!)));
                           },
                           child: AspectRatio(
                             aspectRatio: 2 / 2,
@@ -337,7 +351,7 @@ class _HomePage_ArState extends State<HomePage_Ar> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => neetpg()));
+                                    builder: (context) => NeetPG(userId!)));
                           },
                           child: AspectRatio(
                             aspectRatio: 2 / 2,
@@ -383,8 +397,10 @@ class _HomePage_ArState extends State<HomePage_Ar> {
                         padding: const EdgeInsets.all(15.0),
                         child: InkWell(
                           onTap: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => ssc()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => sscCGL(userId!)));
                           },
                           child: AspectRatio(
                             aspectRatio: 2 / 2,
@@ -431,7 +447,7 @@ class _HomePage_ArState extends State<HomePage_Ar> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => upsc()));
+                                    builder: (context) => UPSC(userId!)));
                           },
                           child: AspectRatio(
                             aspectRatio: 2 / 2,

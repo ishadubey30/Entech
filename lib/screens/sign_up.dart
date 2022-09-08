@@ -15,6 +15,7 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   TextEditingController _passController = TextEditingController();
+  TextEditingController _confirmPassController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _nameController = TextEditingController();
   TextEditingController _aadharController = TextEditingController();
@@ -23,6 +24,9 @@ class _SignUpState extends State<SignUp> {
   TextEditingController _hscPercentController = TextEditingController();
   TextEditingController _criminalController = TextEditingController();
   TextEditingController _disabilityController = TextEditingController();
+  bool _obscureText = true;
+  bool _obscureText1 = true;
+  bool isButtonActive = true;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -99,8 +103,18 @@ class _SignUpState extends State<SignUp> {
 
                     TextFormField(
                       controller: _passController,
-                      obscureText: true,
+                      obscureText: _obscureText,
                       decoration: InputDecoration(
+                        suffixIcon: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              _obscureText = !_obscureText;
+                            });
+                          },
+                          child: Icon(_obscureText
+                              ? Icons.visibility
+                              : Icons.visibility_off),
+                        ),
                         prefixIcon: Icon(CupertinoIcons.lock_fill),
                         prefixIconColor: Colors.black,
                         labelText: "Enter Password",
@@ -117,6 +131,47 @@ class _SignUpState extends State<SignUp> {
                             !RegExp(r'^[a-z A-Z 0-9]+$').hasMatch(value) ||
                             value.length < 6) {
                           return "Password must be 6 digits long";
+                        } else {
+                          return null;
+                        }
+                      },
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    //Confirm Pass
+                    TextFormField(
+                      controller: _confirmPassController,
+                      obscureText: _obscureText1,
+                      decoration: InputDecoration(
+                        suffixIcon: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              _obscureText1 = !_obscureText1;
+                            });
+                          },
+                          child: Icon(_obscureText1
+                              ? Icons.visibility
+                              : Icons.visibility_off),
+                        ),
+                        prefixIcon: Icon(CupertinoIcons.lock_fill),
+                        prefixIconColor: Colors.black,
+                        labelText: "Confirm Password",
+                        floatingLabelBehavior: FloatingLabelBehavior.auto,
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(25),
+                            borderSide: BorderSide(
+                              width: 00,
+                              style: BorderStyle.solid,
+                            )),
+                      ),
+                      validator: (value) {
+                        if (value!.isEmpty ||
+                            !RegExp(r'^[a-z A-Z 0-9]+$').hasMatch(value) ||
+                            value.length < 6) {
+                          return "Password must be 6 digits long";
+                        } else if (value != _passController.text) {
+                          return "Password Didn't Match. Try Again!";
                         } else {
                           return null;
                         }
@@ -243,7 +298,7 @@ class _SignUpState extends State<SignUp> {
                       decoration: InputDecoration(
                         prefixIcon: Icon(CupertinoIcons.textformat_123),
                         prefixIconColor: Colors.black,
-                        labelText: "Enter 12th/Diploma Marks",
+                        labelText: "Enter 12th/Diploma Percent",
                         floatingLabelBehavior: FloatingLabelBehavior.auto,
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25),

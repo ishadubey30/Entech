@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:sih_finals/aman/aman_lib/screens/Student_discount_screen.dart';
 import 'package:sih_finals/aman/aman_lib/screens/free_software_screen.dart';
 import 'package:sih_finals/aman/aman_lib/screens/student_developer_screen.dart';
+import 'package:sih_finals/screens/homepage.dart';
 import '../drawer.dart';
 
 class services_screen extends StatelessWidget {
@@ -13,6 +14,18 @@ class services_screen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       drawer: MyDrawer(),
       appBar: AppBar(
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              CupertinoIcons.home,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => HomePage()));
+            },
+          )
+        ],
         foregroundColor: Colors.black,
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
