@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sih_finals/screens/homepage.dart';
 
 import '../reusable/reusable_wid.dart';
@@ -383,14 +384,9 @@ class _SignUpState extends State<SignUp> {
                             email: _emailController.text.trim(),
                             password: _passController.text.trim(),
                           )
-                              .then((value) {
+                              .then((value) async {
                             print("Created New Account");
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HomePage(),
-                              ),
-                            );
+
                             addUserData(
                                 _emailController.text.trim(),
                                 _nameController.text.trim(),
@@ -400,8 +396,24 @@ class _SignUpState extends State<SignUp> {
                                 int.parse(_hscController.text.trim()),
                                 int.parse(_gradController.text.trim()),
                                 int.parse(_hscPercentController.text.trim()));
+                            SharedPreferences prefs = await SharedPreferences
+                                .getInstance(); //Shared Pref
+                            prefs.setString(
+                                'email', _emailController.toString());
+                            prefs.setString('pass', _passController.toString());
+
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => HomePage(),
+                              ),
+                            );
                           }).onError((error, stackTrace) {
-                            print('Error ${error.toString()}');
+                            var snackBar =
+                                SnackBar(content: Text('Login Failed'));
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                            print('${error.toString()}');
                           });
                         } else {
                           return null;

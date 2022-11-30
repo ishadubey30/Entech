@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sih_finals/screens/homepage.dart';
 import 'package:sih_finals/screens/resetPass.dart';
 import 'package:sih_finals/screens/sign_up.dart';
+
 import 'package:sih_finals/utils/colors.dart';
 
 import '../reusable/reusable_wid.dart';
@@ -126,12 +127,17 @@ class _SignInScreenState extends State<SignInScreen> {
                         email: _emailController.text.trim(),
                         password: _passController.text.trim(),
                       )
-                          .then((value) {
+                          .then((value) async {
+                        SharedPreferences prefs =
+                            await SharedPreferences.getInstance(); //Shared Pref
+                        prefs.setString('email', _emailController.toString());
+                        prefs.setString('pass', _passController.toString());
+
                         const snackBar =
                             SnackBar(content: Text("Login Successfully"));
                         ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                        Navigator.push(
-                          context,
+
+                        Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
                             builder: (context) => HomePage(),
                           ),

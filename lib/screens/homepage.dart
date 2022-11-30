@@ -2,22 +2,24 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sih_finals/ananya/lib/home.dart';
-import 'package:sih_finals/arnav/Arnav-main%20(2)/Arnav-main/home.dart';
+import 'package:sih_finals/counselling/lib/home.dart';
+import 'package:sih_finals/edu_content/educont/home.dart';
+import 'package:sih_finals/exam_form/examform/home_screen.dart';
+
+import 'package:sih_finals/jobportal/lib/pages/homepage_jobPortal.dart';
 
 import 'package:sih_finals/screens/drawer.dart';
+
 import 'package:sih_finals/screens/sign_in.dart';
 import 'package:sih_finals/screens/view_profile.dart';
-import 'package:sih_finals/afsha/afsha_lib/home.dart';
-import 'package:sih_finals/aman/aman_lib/screens/services_screen.dart';
-import 'package:sih_finals/ananya/lib/drawer.dart';
-import 'package:sih_finals/arhma/Arhma_lib/chatbot.dart';
-import 'package:sih_finals/arhma/Arhma_lib/exam_screen.dart';
-import 'package:sih_finals/arhma/Arhma_lib/home_screen.dart';
 
 import 'package:sih_finals/screens/homepage.dart';
 import 'package:lottie/lottie.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sih_finals/shopping/screens/tabbar/tabbar.dart';
+import 'package:sih_finals/stu_services/studentdis/screens/services_screen.dart';
+import 'package:sih_finals/studentpay/homepage_pay.dart';
+import 'package:sih_finals/vid_train/vid_train/vid_train/home.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -28,7 +30,7 @@ class _HomePageState extends State<HomePage> {
   final user = FirebaseAuth.instance.currentUser;
   late String? userId = user!.uid;
 
-  int index = 0;
+  int index = 2;
   final style = TextStyle(color: Colors.black, fontSize: 23);
   final linestyle =
       TextStyle(color: Colors.black, fontSize: 17, fontWeight: FontWeight.bold);
@@ -37,15 +39,24 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
+        animationDuration: Duration(milliseconds: 1000),
         backgroundColor: Colors.black,
         height: 55,
         items: [
+          Icon(
+            CupertinoIcons.cart,
+            size: 20,
+          ),
+          Icon(
+            Icons.person_search,
+            size: 20,
+          ),
           Icon(
             CupertinoIcons.home,
             size: 20,
           ),
           Icon(
-            CupertinoIcons.person,
+            Icons.payment,
             size: 20,
           ),
           Icon(
@@ -61,22 +72,22 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       body: (index == 1)
-          ? GetUserName(userId!)
-          : (index == 0)
+          ? HomePage_JobPortal()
+          : (index == 2)
               ? Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Color.fromARGB(255, 152, 231, 245),
-                        Color.fromARGB(255, 241, 239, 235),
-                        Color.fromARGB(255, 248, 184, 163),
-                      ],
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
-                    ),
-                  ),
+                  decoration: BoxDecoration(color: Colors.blue.shade200),
+                  //   gradient: LinearGradient(
+                  //     colors: [
+                  //       Color.fromARGB(255, 152, 231, 245),
+                  //       Color.fromARGB(255, 241, 239, 235),
+                  //       Color.fromARGB(255, 248, 184, 163),
+                  //     ],
+                  //     begin: Alignment.topRight,
+                  //     end: Alignment.bottomLeft,
+                  //   ),
+                  // ),
                   child: ListView(shrinkWrap: true, children: [
                     Container(
                       color: Color.fromRGBO(0, 0, 0, 0),
@@ -396,23 +407,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     SizedBox(height: 30),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text(
-                        'WITH ENTECH',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 16),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        '-> You will be provided with study materials for every competetive exams.\n\n-> Study material of every subject is provied.\n\n-> It includes all engineering branches.\n\n-> You will be provided with study material for exams like UPSC, Neet, Gate, Railway etc.\n\n-> Exams like UPSC are easy to crack with ENTECH ',
-                        style: (TextStyle(fontSize: 11)),
-                      ),
-                    ),
-                    // Padding(
-                    //   padding: const EdgeInsets.all(8.0),
+
                     //   child:
                     //       Text('Study material of every subject is provied.'),
                     // ),
@@ -431,9 +426,13 @@ class _HomePageState extends State<HomePage> {
                     //       'Exams like UPSC are easy to crack with ENTECH '),
                     // )
                   ]))
-              : (index == 2)
-                  ? MyDrawer()
-                  : Container(),
+              : (index == 3)
+                  ? HomePage_pay()
+                  : (index == 4)
+                      ? MyDrawer()
+                      : (index == 0)
+                          ? FRTabbarScreen()
+                          : Container(),
     );
   }
 }

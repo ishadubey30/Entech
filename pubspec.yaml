@@ -49,6 +49,21 @@ dependencies:
   dialog_flowtter: ^0.3.3
   flutter_spinkit: ^5.1.0
   mailer: ^5.2.0
+  fluttertoast: ^8.0.9
+  local_auth: ^2.1.2
+  flutter_secure_storage: ^6.0.0
+  passcode_screen: ^2.0.1
+  dio: ^4.0.6
+  firebase_storage: ^10.3.11
+  flutter_document_picker: ^5.1.0
+  flutter_widget_from_html: ^0.8.5
+  file_picker: ^5.2.0+1
+  contactus: ^1.2.0
+  nil: ^1.1.1
+  flutter_barcode_scanner: ^2.0.0
+  qr_code_scanner: ^1.0.1
+  expandable_text: ^2.3.0
+ 
   
   
 
@@ -88,6 +103,14 @@ flutter:
   assets:
     - assests/images/
     - assets/dialog_flow_auth.json
+    - assests/icons/
+    - assests/icons/tabbar/bold/
+    - assests/icons/tabbar/light/
+    - assests/icons/light/
+    - assests/icons/bold/
+    - assests/icons/products/
+    - assests/icons/profile/
+    - assests/icons/detail/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
